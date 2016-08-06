@@ -36,6 +36,8 @@ Everything is printed to stdout.
 
 ### Usage:
 
+------
+
 `plog(message, type=PLOG.plog_info)`
 
 Print a pretty log message. Default type is INFO.
