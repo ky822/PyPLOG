@@ -36,7 +36,7 @@ def timestamp():
     return next(PLOG.timestamp_generator)
 
 #set plog coloring
-def color(use=True):
+def plog_color(use=True):
     PLOG.PLOG_USE_COLOR_PRINT = use
 
 
