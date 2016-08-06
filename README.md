@@ -11,13 +11,13 @@ def testfunction():
     plog_color()
     plog("Starting timer.")
     time.sleep(0.2)
-    plog("Heres a warning. Handing over to another function.", type=PLOG.plog_warn)
+    plog("Heres a warning. Handing over to another function.", type=PLOG.warn)
     otherfunction()
 
 def otherfunction():
     plog("I AM ANOTHER FUNCTION!!")
     time.sleep(0.2)
-    plog("Stepped on LEGO. Exiting.", type=PLOG.plog_err)
+    plog("Stepped on LEGO. Exiting.", type=PLOG.err)
 
 
 
@@ -36,15 +36,15 @@ Everything is printed to stdout.
 
 ### Usage:
 
-`plog(message, type=PLOG.plog_info)`
+`plog(message, type=PLOG.info)`
 
 Print a pretty log message. Default type is INFO.
 
 Available types:
 
-* PLOG.plog_info
-* PLOG.plog_warn
-* PLOG.plog_err
+* PLOG.info
+* PLOG.warn
+* PLOG.err
 
 
 ------

@@ -2,9 +2,9 @@ import time, inspect
 
 class PLOG:
     #message types
-    plog_info   = "[INFO] "
-    plog_warn   = "[WARN] "
-    plog_err    = "[ERROR]"
+    info   = "[INFO] "
+    warn   = "[WARN] "
+    err    = "[ERROR]"
 
     #10 digits, 3 decimals
     TIME_FORMAT = "%13.3f"
@@ -36,25 +36,25 @@ def timestamp():
     return next(PLOG.timestamp_generator)
 
 #set plog coloring
-def plog_color(use=True):
+def color(use=True):
     PLOG.PLOG_USE_COLOR_PRINT = use
 
 
 
 
 # Pretty LOG messages
-def plog(message, type=PLOG.plog_info):
+def plog(message, type=PLOG.info):
     #name of caller function
     caller = " [%s]" % inspect.stack()[1][3]
 
     if PLOG.PLOG_USE_COLOR_PRINT:
         snippet = "{TiCo}{time} {TyCo}{type}{TiCo}{caller}{CoRe} - %s"
-        if type is PLOG.plog_err:
+        if type is PLOG.err:
             #color message if it's an error.
             snippet = snippet % ("%s{msg}%s" % (PLOG.ERROR_COLOR, PLOG.COLOR_RESET))
             type_color = PLOG.ERROR_COLOR
         else:
-            if type is PLOG.plog_warn:
+            if type is PLOG.warn:
                 #color warnings too
                 type_color = PLOG.WARN_COLOR
                 snippet = snippet % ("%s{msg}%s" % (PLOG.WARN_COLOR, PLOG.COLOR_RESET))
