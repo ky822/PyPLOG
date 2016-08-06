@@ -83,6 +83,5 @@ def plog(message, type=PLOG.info):
 
 
 
-if __name__ == "__main__":
-    #start timer. The program /was/ started, after all...
-    next(PLOG.timestamp_generator)
+#start timer. The program /was/ started, after all...
+next(PLOG.timestamp_generator)
