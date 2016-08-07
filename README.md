@@ -38,10 +38,10 @@ Everything is printed to stdout.
 
 ------
 
-`plog(message, type=PLOG.info)`
+`plog(*message, type=PLOG.info, delim=" ")`
 
 
-Print a pretty log message. Default type is INFO.
+Print a pretty log message. Default type is info.
 
 Available types:
 
