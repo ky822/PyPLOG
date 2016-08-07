@@ -49,7 +49,7 @@ def plog(*msg, type=PLOG.info, delim=" "):
 
     message = ""
     for s in msg:
-        message += delim + s
+        message += "%s%s" % (str(delim), str(s))
 
     if PLOG.PLOG_USE_COLOR_PRINT:
         snippet = "{TiCo}{time} {TyCo}{type}{TiCo}{caller}{CoRe} - %s"
