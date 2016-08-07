@@ -43,12 +43,13 @@ def plog_color(use=True):
 
 
 # Pretty LOG messages
-def plog(*msg, type=PLOG.info):
+def plog(*msg, type=PLOG.info, delim=" "):
     #name of caller function
     caller = " [%s]" % inspect.stack()[1][3]
+
     message = ""
     for s in msg:
-        message += " " + s
+        message += delim + s
 
     if PLOG.PLOG_USE_COLOR_PRINT:
         snippet = "{TiCo}{time} {TyCo}{type}{TiCo}{caller}{CoRe} - %s"
