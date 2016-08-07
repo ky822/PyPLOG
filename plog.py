@@ -12,7 +12,7 @@ class PLOG:
     #use color?
     PLOG_USE_COLOR_PRINT = False
 
-    TIME_COLOR  = u'\033[0;34m'
+    TIME_COLOR  = u'\033[0;36m'
     INFO_COLOR  = u'\033[0;32m'
     WARN_COLOR  = u'\033[0;33m'
     ERROR_COLOR = u'\033[0;31m'
@@ -43,9 +43,12 @@ def plog_color(use=True):
 
 
 # Pretty LOG messages
-def plog(message, type=PLOG.info):
+def plog(*msg, type=PLOG.info):
     #name of caller function
     caller = " [%s]" % inspect.stack()[1][3]
+    message = ""
+    for s in msg:
+        message += " " + s
 
     if PLOG.PLOG_USE_COLOR_PRINT:
         snippet = "{TiCo}{time} {TyCo}{type}{TiCo}{caller}{CoRe} - %s"
