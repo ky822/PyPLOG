@@ -1,7 +1,6 @@
 from plog import *
 
 def testfunction():
-    color()
     plog("Starting timer.")
     time.sleep(0.2)
     plog("Heres a warning. Handing over to another function.", type=PLOG.warn)
@@ -16,4 +15,5 @@ def otherfunction():
 
 
 if __name__ == "__main__":
+    plog_color()
     testfunction()
